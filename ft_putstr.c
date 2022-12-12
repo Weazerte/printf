@@ -6,7 +6,7 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 19:39:52 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/08 20:24:36 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 15:29:56 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ int	ft_putstr(char *s)
 	int	i;
 
 	i = 0;
+	if (s == NULL)
+	{
+		i += ft_putstr("(null)");
+		return (i);
+	}
 	while (s[i])
 	{
-		write(1, &s[i], 1);
+		ft_putchar(s[i]);
 		i++;
 	}
 	return (i--);

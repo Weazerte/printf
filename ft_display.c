@@ -6,15 +6,16 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 17:30:33 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/09 21:22:21 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 15:51:43 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_display(va_list parameterinfos, char c)
+int	ft_display(va_list parameterinfos, const char c)
 {
 	int	count;
+	// char	*str;
 
 	count = 0;
 	if (c == 'c')
@@ -27,19 +28,11 @@ int	ft_display(va_list parameterinfos, char c)
 		count += ft_putnbr(va_arg(parameterinfos, int));
 	else if (c == 'i')
 		count += ft_putnbr(va_arg(parameterinfos, int));
-	else if (c == 'p')
-	{
-		count += ft_putstr("0x");
-		count += ft_hexa(va_arg(parameterinfos, int));
-	}
 	else if (c == 'u')
-		count += ft_putnbr_unsigned(va_arg(parameterinfos, unsigned int));
-	else if (c == 'x')
-		{
-		count += ft_putstr("0x");
-		count += ft_hexa(va_arg(parameterinfos, int));
-		}
-	else if (c == 'X')
-		count += ft_hexa_upper(va_arg(parameterinfos, int));
-	return (count);
+		count += ft_print_unsigned(va_arg(parameterinfos, unsigned int));
+	else if (c == 'p')
+		count += ft_print_ptr(va_arg(parameterinfos, unsigned long long));
+	else if (c == 'x' || c == 'X')
+		count += ft_print_hexa(va_arg(parameterinfos, unsigned int), c);
+	return (count); 
 }

@@ -6,7 +6,7 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:21:38 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/09 20:40:29 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 15:50:55 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putnbr(int nb)
 	count = 0;
 	if (nb == -2147483648)
 	{
-		count += ft_putstr("2147483648");
+		count += ft_putstr("-2147483648");
 		return (count);
 	}
 	if (nb < 0)

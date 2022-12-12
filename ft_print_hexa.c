@@ -1,34 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexa.c                                          :+:      :+:    :+:   */
+/*   ft_print_hexa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 17:13:51 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/09 21:12:49 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 15:14:36 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hexa(int nbr)
+int	ft_hexa_len(unsigned int nbr)
 {
-	char	*base;
 	int	count;
 
 	count = 0;
-	base = "0123456789abcdef";
-	if (nbr < 0)
+	while (nbr != 0)
 	{
-		nbr *= -1;
-		count += ft_putchar('-');
+		count++;
+		nbr /= 16;
 	}
-	if (nbr > 15)
-	{
-		count += ft_hexa(nbr / 16);
-		count += ft_hexa(nbr % 16);
-	}
-	count += ft_putchar(base[nbr]);
 	return (count);
+}
+
+void	ft_put_hexa(unsigned int nbr, const char c)
+{
+	if (nbr >= 16)
+	{
+		ft_put_hexa(nbr / 16, c);
+		ft_put_hexa(nbr % 16, c);
+	}
+	else
+	{
+		if (nbr <= 9)
+			ft_putchar((nbr + '0'));
+		else
+		{
+			if (c == 'x')
+				ft_putchar((nbr - 10 + 'a'));
+			if (c == 'X')
+				ft_putchar((nbr - 10 + 'A'));
+		}
+	}
+}
+
+int	ft_print_hexa(unsigned int nbr, const char c)
+{
+	if (nbr == 0)
+		return (ft_putchar('0'));
+	else
+		ft_put_hexa(nbr, c);
+	return (ft_hexa_len(nbr));
 }
