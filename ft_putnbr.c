@@ -6,7 +6,7 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 14:21:38 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/12 15:50:55 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 16:19:53 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,3 @@ int	ft_putnbr(int nb)
 		count += ft_putchar(nb + '0');
 	return (count);
 }
-

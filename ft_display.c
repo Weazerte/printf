@@ -6,7 +6,7 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 17:30:33 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/12 15:51:43 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 16:17:24 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_display(va_list parameterinfos, const char c)
 {
 	int	count;
-	// char	*str;
 
 	count = 0;
 	if (c == 'c')
@@ -34,5 +33,5 @@ int	ft_display(va_list parameterinfos, const char c)
 		count += ft_print_ptr(va_arg(parameterinfos, unsigned long long));
 	else if (c == 'x' || c == 'X')
 		count += ft_print_hexa(va_arg(parameterinfos, unsigned int), c);
-	return (count); 
+	return (count);
 }

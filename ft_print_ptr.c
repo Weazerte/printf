@@ -6,7 +6,7 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:11:30 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/12 16:04:38 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 16:22:37 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_ptr_len(unsigned long long nbr)
 	int	count;
 
 	count = 0;
-	while(nbr != 0)
+	while (nbr != 0)
 	{
 		count++;
 		nbr /= 16;
@@ -53,6 +53,6 @@ int	ft_print_ptr(unsigned long long nbr)
 	}
 	count += ft_putstr("0x");
 	ft_put_ptr(nbr);
-	count += ft_ptr_len(nbr);	
+	count += ft_ptr_len(nbr);
 	return (count);
 }

@@ -6,31 +6,31 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 17:14:38 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/12 16:15:33 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 16:19:40 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	int	i;
-	int	res;
-	va_list parametersInfos;
-	va_start( parametersInfos, str);
+	int		i;
+	int		res;
+	va_list	parametersinfos;
 
+	va_start(parametersinfos, str);
 	i = 0;
 	res = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if(str[i] != '%')
+		if (str[i] != '%')
 		{
 			res += ft_putchar(str[i]);
 			i++;
-			continue;
+			continue ;
 		}
 		i++;
-		res += ft_display(parametersInfos, str[i]);
+		res += ft_display(parametersinfos, str[i]);
 		i++;
 	}
 	return (res);

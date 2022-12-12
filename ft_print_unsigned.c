@@ -6,7 +6,7 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 18:59:14 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/12 15:34:18 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/12 16:21:11 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	ft_unsigned_len(unsigned int nbr)
 	return (count);
 }
 
-char *ft_itoa_unsigned(unsigned int nbr)
+char	*ft_itoa_unsigned(unsigned int nbr)
 {
-	int	len;
+	int		len;
 	char	*str;
 
 	len = ft_unsigned_len(nbr);
