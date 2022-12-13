@@ -6,7 +6,7 @@
 /*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 17:14:38 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/12 16:19:40 by eaubry           ###   ########.fr       */
+/*   Updated: 2022/12/13 17:17:39 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int	ft_printf(const char *str, ...)
 		res += ft_display(parametersinfos, str[i]);
 		i++;
 	}
+	va_end(parametersinfos);
 	return (res);
 }
