@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: weaz <weaz@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: eaubry <eaubry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 17:14:38 by eaubry            #+#    #+#             */
-/*   Updated: 2022/12/16 15:09:48 by weaz             ###   ########.fr       */
+/*   Updated: 2022/12/13 17:17:39 by eaubry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	ft_printf(const char *str, ...)
 	int		res;
 	va_list	parametersinfos;
 
-	if (!str)
-		return (NULL);
 	va_start(parametersinfos, str);
 	i = 0;
 	res = 0;
